@@ -21,11 +21,15 @@
 </style>
 <script>
   var x = localStorage.getItem ("number");
+	document.getElementById ("number").innerHTML = x;
+	
+	
 setInterval(function () {
     document.getElementById ("number").innerHTML = x++;
     var n = document.getElementById ("number").innerHTML;
     localStorage.setItem ("number",n);
 }, 1000);
+	
 </script>
 	</body>
 </html>
