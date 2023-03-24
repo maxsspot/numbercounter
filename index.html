@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<title>PERMANENT NUMBER COUNTER++</title>
+	</head>
+	<body>
+		<p>CURRENT NUMBER: <span id = "number"></span></p>
+    <style>
+    body {
+	font-family:"Open Sans", sans-serif;
+}
+</style>
+<script>
+  var x = localStorage.getItem ("number");
+setInterval(function () {
+    document.getElementById ("number").innerHTML = x++;
+    var n = document.getElementById ("number").innerHTML;
+    localStorage.setItem ("number",n);
+}, 1000);
+</script>
+	</body>
+</html>
