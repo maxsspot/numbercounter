@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset = "UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<title>NUMBER COUNTER UP - ANIMATED</title>
+	</head>
+	<body>
+		<h1 id = "ye"><span id = "number"></span></h1>
+    <style>
+    body {
+	font-family:"Open Sans", sans-serif;
+	    text-align:center;
+	    margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+	    background-color:black;
+	    color:white;
+	    font-weight:light;
+}
+	    
+	    #ye {
+		    animation:spin 5s infinite;
+	    }
+	    
+	    @keyframes spin {
+		    0% {
+			transform: translate(-50%, -50%);
+		    } 
+		    
+		    50% {
+			transform: translate(-50%, -0%);
+		    } 
+		    
+		    100% {
+			transform: translate(-50%, -50%);
+		    }
+	    }
+</style>
+<script>
+
+   
+  var x = localStorage.getItem ("number");
+	document.getElementById ("number").innerHTML = x;
+	
+	
+setInterval(function () {
+    document.getElementById ("number").innerHTML = x++;
+    var n = document.getElementById ("number").innerHTML;
+    localStorage.setItem ("number",n);
+}, 1000);
+	
+	
+</script>
+	</body>
+</html>
